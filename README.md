@@ -23,12 +23,14 @@ In the directory you want to test this config use: `sudo docker run -it --rm -v=
 1. Place the `.local` and `.npm` folders with the cache inside `./context/` after installing plugins in another container.
    - In my case, I did it the first time with a bind mount in the current working directory, like this:
      ```bash
+     cd ./context/
+     mkdir .local .npm
      sudo docker run -d -v=$PWD/.npm:/root/.npm -v=$PWD/.local:/root/.local --name alpvim alpine:latest tail -f /dev/null
      ```
    - After that, install dependencies, clone the config, and open Neovim to install plugins with lazyvim:
      ```bash
      apk add git lazygit neovim ripgrep nodejs npm alpine-sdk --update
-     git clone https://github.com/Lenoxo/temp-nvim.git ~/.config/nvim
+     git clone https://github.com/Lenoxo/nvim-config.git ~/.config/nvim
      nvim
      ```
    - Now you can stop the container, and the cache is saved in `.local` and `.npm` within `context/`.
