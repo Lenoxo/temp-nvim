@@ -1,5 +1,9 @@
 # temp-nvim
 
+
+https://github.com/Lenoxo/temp-nvim/assets/119215089/b652aeeb-9b9c-489d-b044-74b249108cd6
+
+
 Dockerized Neovim setup with lazyvim and pre-installed plugins based on Alpine Linux.
 
 <!--toc:start-->
